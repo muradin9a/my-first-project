@@ -1,0 +1,49 @@
+.row {
+	max-width: $grid-width;
+	margin: 0 auto; //center a block insiede a block element
+
+	// to avoid the last element of the row to have a bottom margin we can use the not pseudo class to select all but not the last child and then put the margin bottom that is what we want the last-shild not to have
+	&:not(:last-child) {
+		margin-bottom: $gutter-vertical;
+	}
+
+	@include clearfix;
+
+	//attribute selector
+	//^ will select all the attributes that start with col in the example - * select all part that contain.. - $ select all attributes that end with...
+	[class^="col-"] {
+		float: left;
+
+		&:not(:last-child) {
+			margin-right: $horizontal-gutter;
+		}
+	}
+
+	.col-1-of-2 {
+		width: calc((100% - #{$horizontal-gutter}) / 2);
+	}
+
+	.col-1-of-3 {
+		width: calc((100% - 2 * #{$horizontal-gutter}) / 3);
+	}
+
+	.col-1-of-4 {
+		width: calc((100% - 3 * #{$horizontal-gutter}) / 4);
+	}
+
+	.col-2-of-3 {
+		width: calc(
+			2 * ((100% - 2 * #{$horizontal-gutter}) / 3) + #{$horizontal-gutter}
+		);
+	}
+	.col-2-of-4 {
+		width: calc(
+			2 * ((100% - 3 * #{$horizontal-gutter}) / 4) + #{$horizontal-gutter}
+		);
+	}
+	.col-3-of-4 {
+		width: calc(
+			3 * ((100% - 3 * #{$horizontal-gutter}) / 4) + 2 * (#{$horizontal-gutter})
+		);
+	}
+}

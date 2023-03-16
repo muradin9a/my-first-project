@@ -1,0 +1,14 @@
+{
+	"name": "handbook",
+	"version": "1.0.0",
+	"description": "\"Complete case management manual for NPNs and CNs\"",
+	"main": "index.js",
+	"scripts": {
+		"compile:sass": "node-sass 4-sass/main.scss 2-css/style.css -w"
+	},
+	"author": "Valter M.",
+	"license": "ISC",
+	"devDependencies": {
+		"node-sass": "^8.0.0"
+	}
+}

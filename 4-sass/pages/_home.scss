@@ -1,0 +1,5 @@
+.section-about {
+	background-color: $color-gray-light1;
+	padding: 25rem 0;
+	margin-top: -20vh; //move all the section up to 20vh, the value required to close the gap caused by the clip-path of preaviious section - 95vh-75vg=20vh
+}
